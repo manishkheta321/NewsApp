@@ -5,7 +5,7 @@ export default class NewsItem extends React.Component {
     const { imageURL, description } = this.props;
     return (
       <div className="newsItem">
-        <img className="col-5" alt="image1" src={imageURL}></img>
+        <img className="col-5" alt="unableToLoadhImage" src={imageURL}></img>
         <p className="col-6">{description}</p>
       </div>
     );

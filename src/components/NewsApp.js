@@ -1,5 +1,6 @@
 import React from "react";
 import CountryList from "./CountryList";
+import Loader from "./Loader";
 import NewsList from "./NewsList";
 
 const token = "bd285e35d4574b39b703ed566c1c5500";
@@ -29,6 +30,9 @@ export default class NewsApp extends React.Component {
           news: json.articles,
           loader: false,
         });
+      })
+      .catch((e) => {
+        console.log(e);
       });
   };
 
@@ -45,7 +49,7 @@ export default class NewsApp extends React.Component {
           countryChosen={countryChosen}
           fetchNews={this.fetchNews}
         />
-        {loader ? <h1>Loading...</h1> : <NewsList news={news} />}
+        {loader ? <Loader /> : <NewsList news={news} />}
       </>
     );
   }
